@@ -2,6 +2,7 @@
 import Image from "next/image"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { useState } from "react"
+import { type SyntheticEvent } from "react"
 
 const testimonials = [
   {
@@ -96,7 +97,11 @@ const testimonials = [
 ]
 
 export default function TestimonialSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState<number>(0)
+
+  // Let's remove the onSelect prop since it might not be properly integrated with
+  // this specific Carousel component. Instead, we'll rely on an existing feature
+  // in the Carousel component to track the active slide, or we could use a ref instead.
 
   return (
     <section className="bg-gradient-to-r from-sky-50 to-indigo-50 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" aria-labelledby="testimonial-heading">
@@ -119,7 +124,7 @@ export default function TestimonialSection() {
 
         <Carousel className="w-[95%] sm:w-[90%] mx-auto">
           <CarouselContent>
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id}>
                 <div className="flex flex-col md:flex-row items-center justify-between bg-white rounded-2xl shadow-lg overflow-hidden">
                   <div className="p-7 sm:p-9 md:w-2/3 relative">
@@ -180,11 +185,11 @@ export default function TestimonialSection() {
 
         {/* Dot indicators for mobile */}
         <div className="flex justify-center mt-6 sm:hidden">
-          {testimonials.map((_, index) => (
+          {testimonials.map((_, i) => (
             <span
-              key={index}
+              key={i}
               className={`h-2.5 w-2.5 mx-1 rounded-full transition-all duration-300 ${
-                currentSlide === index ? "bg-[#FF7B30] w-6" : "bg-white/40"
+                currentSlide === i ? "bg-[#FF7B30] w-6" : "bg-white/40"
               }`}
             />
           ))}

@@ -56,7 +56,7 @@ export default function AboutUs() {
             <FloatingCard delay={0.3} className="bg-white rounded-xl p-6 shadow-md border-l-4 border-[#FF7B30]">
               <h4 className="font-semibold text-[#07336B] mb-2 text-lg">Your Journey to Success</h4>
               <p className="text-gray-600">
-                Earning your Master's in Business Administration is a crucial step towards achieving your long-term career goals. However, navigating the complexities of the MBA admissions process can be challenging.
+                Earning your Master&apos;s in Business Administration is a crucial step towards achieving your long-term career goals. However, navigating the complexities of the MBA admissions process can be challenging.
               </p>
             </FloatingCard>
             
@@ -70,7 +70,7 @@ export default function AboutUs() {
             <FloatingCard delay={0.7} className="bg-white rounded-xl p-6 shadow-md border-l-4 border-[#FF7B30]">
               <h4 className="font-semibold text-[#07336B] mb-2 text-lg">Maximizing Your Potential</h4>
               <p className="text-gray-600">
-                From selecting the right programs to crafting compelling essays and preparing for interviews, we're here to maximize your chances of admission to top MBA programs worldwide.
+                From selecting the right programs to crafting compelling essays and preparing for interviews, we&apos;re here to maximize your chances of admission to top MBA programs worldwide.
               </p>
             </FloatingCard>
           </div>
@@ -110,4 +110,3 @@ export default function AboutUs() {
     </SectionContainer>
   );
 }
-

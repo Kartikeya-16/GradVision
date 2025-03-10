@@ -8,7 +8,7 @@ import Head from 'next/head';
 type ProgramData = {
     title: string;
     specializations: string[];
-    Overview?: String,
+    Overview?: string; // Changed from String to string
     topImage: string;
     bottomImage: string;
     // Make optional properties for both programs
@@ -156,9 +156,9 @@ export default function ProgramOverview() {
                                     {activeProgram === 'PGDM' && (
                                         <>
                                         <div>
-        <h4 className="text-[#0A2472] font-bold text-xl sm:text-2xl mb-2">OVERVIEW:</h4>
-        <p className="text-[#0A2472] text-sm sm:text-base">{currentProgram.Overview}</p>
-    </div>
+                                            <h4 className="text-[#0A2472] font-bold text-xl sm:text-2xl mb-2">OVERVIEW:</h4>
+                                            <p className="text-[#0A2472] text-sm sm:text-base">{currentProgram.Overview}</p>
+                                        </div>
                                             <div>
                                                 <h4 className="text-[#0A2472] font-bold text-xl sm:text-2xl mb-2">INDUSTRY ORIENTED CURRICULUM:</h4>
                                                 <p className="text-[#0A2472] text-sm sm:text-base">{currentProgram.IndustryOrientedCurriculum}</p>
@@ -186,8 +186,6 @@ export default function ProgramOverview() {
                                             ))}
                                         </ul>
                                     </div>
-
-                                    
 
                                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                                         <Button className="bg-[#E98A15] text-white hover:bg-[#d17913]">

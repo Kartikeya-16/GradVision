@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
 interface Blog {
   _id: string
@@ -31,7 +32,6 @@ export default function BlogPage() {
         if (Array.isArray(data)) {
           setBlogs(data)
         } else if (typeof data === "object" && data !== null) {
-          // If it's an object, it might be wrapped in a property
           const possibleArray = Object.values(data)[0]
           if (Array.isArray(possibleArray)) {
             setBlogs(possibleArray)
@@ -93,12 +93,15 @@ export default function BlogPage() {
               key={blog._id}
               className="border-[2px] border-[#012060] rounded-lg p-4 w-[90%] md:w-[501px] mx-auto shadow-[-7px_5px_#012060] bg-white"
             >
-              {/* Image with Padding Inside the Card */}
+              {/* Optimized Image using next/image */}
               <div className="overflow-hidden rounded-lg">
-                <img
+                <Image
                   src={blog.imageUrl || "/placeholder.svg"}
                   alt={blog.title}
-                  className="w-full h-48 object-cover rounded-lg"
+                  width={500}
+                  height={200}
+                  layout="responsive"
+                  className="rounded-lg"
                 />
               </div>
 
@@ -126,4 +129,3 @@ export default function BlogPage() {
     </div>
   )
 }
-

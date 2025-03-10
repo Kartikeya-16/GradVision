@@ -1,6 +1,5 @@
 "use client"
 
-import Nav from './navbar'
 import Banner from './banner';
 import Hero from './hero';
 import AboutUs from './aboutus';
@@ -12,20 +11,8 @@ import Getintouch from './getintouch';
 import AccreditationsSection from './AccreditationsSection.';
 import WelcomeAnimation from '@/components/ui/WelcomeAnimation';
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [animationComplete, setAnimationComplete] = useState(false);
-
-  useEffect(() => {
-    // Start rendering the content after the welcome animation
-    const timer = setTimeout(() => {
-      setAnimationComplete(true);
-    }, 2000); // Slightly before welcome animation ends
-    
-    return () => clearTimeout(timer);
-  }, []);
-
   // Stagger delay calculation for smoother visual flow
   const getStaggerDelay = (index: number) => {
     return index * 0.15; // 150ms stagger between sections

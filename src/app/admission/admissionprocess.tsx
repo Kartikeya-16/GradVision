@@ -1,6 +1,7 @@
 "use client"
 import { useMediaQuery } from "react-responsive"
 import { motion } from "framer-motion"
+import Image from "next/image" // Import the Next.js Image component
 
 export default function AdmissionProcess() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" })
@@ -77,7 +78,13 @@ export default function AdmissionProcess() {
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.5 }}
             >
-              <img src="/admission/roadpath.png" alt="Road Path" className="w-full h-full object-contain rotate-180" />
+              <Image 
+                src="/admission/roadpath.png" 
+                alt="Road Path" 
+                className="w-full h-full object-contain rotate-180"
+                width={800}
+                height={1000}
+              />
             </motion.div>
             <motion.div 
               className="absolute top-[813px] left-[-7%] w-[90%] h-[1000px]"
@@ -86,7 +93,13 @@ export default function AdmissionProcess() {
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.5 }}
             >
-              <img src="/admission/roadpath2.png" alt="Road Path" className="w-full h-full object-contain" />
+              <Image 
+                src="/admission/roadpath2.png" 
+                alt="Road Path" 
+                className="w-full h-full object-contain"
+                width={800}
+                height={1000}
+              />
             </motion.div>
           </>
         )}
@@ -108,7 +121,7 @@ export default function AdmissionProcess() {
             <h2 className="font-bold mb-3 text-center text-[#0A4DA2] text-lg">STEP 1: CHECK ELIGIBILITY</h2>
             <p className="text-gray-700 mb-3">Ensure you meet the following criteria:</p>
             <ul className="text-gray-700 list-disc pl-5 mb-4 space-y-1">
-              <li>Bachelor's degree with a minimum of 50% (45% for reserved categories).</li>
+              <li>Bachelor&apos;s degree with a minimum of 50% (45% for reserved categories).</li>
               <li>Accepted exams: CAT, XAT, GMAT, MAT, CMAT.</li>
               <li>Work experience (if required).</li>
             </ul>
@@ -187,4 +200,3 @@ export default function AdmissionProcess() {
     </div>
   )
 }
-
